@@ -2,18 +2,19 @@
 
 ## Prompt used in our paper
 
-### Converting PDF files to Latex document
-Prompt: PDF2Latex.txt
+### Data Extraction and Standardization
+Converting PDF files to Latex document: PDF2Latex.txt
 
-### Extraction Agent
-Prompt: ExtractLatex.txt
+Data Standardization: ExtractLatex.txt
 
-This agent then extracts (i) the formal problem definition(s) $\mathcal{T}$, (ii) the algorithm definition $\mathcal{A}$, (iii) the ground-truth approximation ratio $\alpha$ and its corresponding proof, and (iv) the key lemmas invoked by the ground truth proof $\mathcal{C}$.
+Data Standardization agent extracts (i) the formal problem definition(s) $\mathcal{T}$, (ii) the algorithm definition $\mathcal{A}$, (iii) the ground-truth approximation ratio $\alpha$ and its corresponding proof, and (iv) the key lemmas invoked by the ground truth proof $\mathcal{C}$.
 
-### User Instruction
-basic_instruction.txt: basic user instruction without CoT instruction.
+### User input to generate answer
+User input contains user instruction and task information from standardized data.
 
-reasoning_instruction.txt: user instruction with CoT template.
+Basic user instruction without CoT instruction: basic_instruction.txt
+
+User instruction with CoT template: reasoning_instruction.txt
 
 The {x} refers to how many parts contained task information. The parts contained in task information depends on the experiment setting.
 ```
@@ -26,4 +27,5 @@ The task information contains {x} parts, all written in LaTeX format:
 
 ### Evaluation pipeline
 Prompt for evaluation: evaluation.txt
+
 Prompt for error analysis: evaluation.txt
