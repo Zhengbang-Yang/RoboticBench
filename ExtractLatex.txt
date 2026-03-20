@@ -1,0 +1,58 @@
+You are an expert reader of robotics motion/path planning and approximation algorithms. You will be given the full text of a research paper about a robotics path-planning problem and approximation-ratio guarantees.
+
+Your task: extract and structure the paper’s core formal content related to approximation analysis. Be precise, and prefer verbatim definitions when they are short; otherwise paraphrase faithfully while preserving mathematical meaning.
+
+Instructions:
+1) Problem Name
+   - Identify the name of exact optimization problem studied.
+
+2) Problem Definition
+   - Identify the exact optimization problem studied (inputs, outputs, objective).
+   - Include constraints, assumptions (metric/triangle inequality, start depot(s), number of robots/vehicles, capacities, deadlines, etc.), and how cost is measured.
+   - If multiple problem variants are defined, capture each variant distinctly.
+   - Problem name should not be included.
+
+3) Algorithm Name (per algorithm)
+   - For every algorithm proposed or analyzed in the paper (including variants), extract: the algorithm name
+
+4) Algorithm Definition (per algorithm)
+   - For every algorithm proposed or analyzed in the paper (including variants), extract:
+     - The algorithm name
+     - Clear step-by-step description (high-level + key technical steps)
+     - Any required subroutines (e.g., MST, TSP tour, Christofides, primal-dual, clustering, splitting, doubling, shortcutting)
+     - Important parameters and how they are chosen
+     - Time complexity if stated
+   - Algorithm name should not be included.
+
+5) In-context Knowledge used in the approximation proof
+   - Extract every external theorem/lemma/prior result the proof relies on.
+   - For each, include: name/title, statement, used_for.
+   - Only include items actually referenced/used in the approximation analysis.
+
+6) Approximation Proof (per algorithm)
+   - Reconstruct the approximation-ratio proof logically with key steps and inequalities.
+   - If steps are inferred, label them as “inferred”.
+
+7) Approximation Ratio (per algorithm)
+   - Report the final guarantee and conditions.
+
+Output Format (STRICT):
+Return a single JSON array. Each element corresponds to one algorithm (or algorithm variant):
+[
+  {
+    "problem_name": "...",
+    "problem_definition": "...",
+    "algorithm_name": "...",
+    "algorithm_definition": "...",
+    "in-context_knowledge": [{"name":"...","statement":"...","used_for":"..."}],
+    "proof": "...",
+    "approximation_rate": "..."
+  }
+]
+
+Additional Requirements:
+- Do NOT use any unicode characters - only LaTeX
+- Ensure all mathematical expressions are wrapped in proper math mode: inline or displayed environments.
+- Use "\\(" and "\\)" for inline math expressions
+- Use "\\[" and "\\]" for display/block math equations
+- Ensure all mathematical expressions are properly formatted
