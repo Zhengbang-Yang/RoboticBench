@@ -16,7 +16,7 @@ Basic user instruction without CoT instruction: basic_instruction.txt
 
 User instruction with CoT template: reasoning_instruction.txt
 
-The {x} refers to how many parts contained task information. The parts contained in task information depends on the experiment setting.
+For the following part shared by both type of instruction, the {x} refers to how many parts contained task information. The parts contained in task information depends on the experiment setting.
 ```
 The task information contains {x} parts, all written in LaTeX format:
 1. **Problem Definition**: Describes the path planning problem you are analyzing.
