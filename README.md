@@ -1,4 +1,4 @@
-# RoboticBench
+# RoboticsBench
 
 ## Prompt used in our paper
 
